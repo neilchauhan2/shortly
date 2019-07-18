@@ -7,6 +7,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// routes
+app.use("/", require("./routes"));
+app.use("/url", require("./routes/url"));
+
 connect();
 
 app.listen(port, () => {
