@@ -24,14 +24,14 @@ route.post("/shorten", async (req, res) => {
       } else {
         const shortUrl = baseUrl + "/" + urlCode;
 
-        url = new Url({
+        const createdUrl = new Url({
           longUrl,
           shortUrl,
           urlCode
         });
 
-        await url.save();
-        res.send(url);
+        await createdUrl.save();
+        res.send(createdUrl);
       }
     } else {
       return res.status(401).send("Invalid long url");
