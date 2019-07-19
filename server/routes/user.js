@@ -8,9 +8,9 @@ const auth = require("../middleware/auth");
 // create new user
 route.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
     // validation
-    if (!name || !email || !password) {
+    if (!firstName || !lastName || !email || !password) {
       return res.status(400).send("Please enter all credentials!");
     }
     // check for existing user
