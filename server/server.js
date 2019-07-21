@@ -1,9 +1,11 @@
 const express = require("express");
 const port = process.env.PORT || 8000;
 const connect = require("./config/db");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
