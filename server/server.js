@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // routes
-app.use("/api", require("./routes"));
+app.use("/", require("./routes"));
 app.use("/api/url", require("./routes/url"));
 app.use("/api/auth", require("./routes/user"));
 
