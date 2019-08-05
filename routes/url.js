@@ -1,13 +1,13 @@
 const route = require("express").Router();
 const validUrl = require("valid-url");
-const config = require("config");
+// const config = require("config");
 const shortid = require("shortid");
 const Url = require("../models/Url");
 
 route.post("/shorten", async (req, res) => {
   try {
     const { longUrl, keyword } = req.body;
-    const baseUrl = config.get("baseUrl");
+    const baseUrl = process.env.baseUrl;
     // baseUrl validation
     if (!validUrl.isUri(baseUrl)) {
       return res.status(401).send("Invalid base url");
