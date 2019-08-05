@@ -65,6 +65,17 @@ class Navbar extends Component {
 
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-end">
+              <span className="navbar-item">
+                <a
+                  href="https://github.com/neilchauhan2/shortly"
+                  className="button is-link is-inverted"
+                >
+                  <span className="icon">
+                    <i className="fab fa-github" />
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
               {user ? (
                 <Link to="#" className="navbar-item">
                   Hello {user.firstName}
