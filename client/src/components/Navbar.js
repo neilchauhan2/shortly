@@ -91,7 +91,7 @@ class Navbar extends Component {
                 </Link>
               ) : (
                 <div className="navbar-item">
-                  {/* <SignUp /> */}
+                  <SignUp /> 
                   <Login />
                 </div>
               )}
