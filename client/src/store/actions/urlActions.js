@@ -4,7 +4,7 @@ import { GET_URL, URL_ERROR } from "./types";
 
 export const getUrl = longUrl => dispatch => {
   axios
-    .post(`http://localhost:8000/api/url/shorten`, {
+    .post(`/api/url/shorten`, {
       longUrl
     })
     .then(res => res.data)
