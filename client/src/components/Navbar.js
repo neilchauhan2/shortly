@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Login from "./Login";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/authActions";
-// import SignUp from "./SignUp";
+import SignUp from "./SignUp";
 
 class Navbar extends Component {
   componentDidMount = () => {

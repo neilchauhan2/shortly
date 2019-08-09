@@ -2,8 +2,10 @@ const route = require("express").Router();
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-// const config = require("config");
+const config = require("config");
 const auth = require("../middleware/auth");
+
+const jwtSecret = config.get("jwtSecret") || process.env.jwtSecret;
 
 // create new user
 route.post("/signup", async (req, res) => {
@@ -32,7 +34,7 @@ route.post("/signup", async (req, res) => {
     });
 
     const newUser = await createdUser.save();
-    jwt.sign({ id: newUser.id }, process.env.jwtSecret, (err, token) => {
+    jwt.sign({ id: newUser.id }, jwtSecret, (err, token) => {
       if (err) throw err;
       res.send({
         token,
@@ -68,7 +70,7 @@ route.post("/login", async (req, res) => {
     // compare password
     const match = await bcrypt.compare(password, user.password);
     if (match) {
-      jwt.sign({ id: user.id }, process.env.jwtSecret, (err, token) => {
+      jwt.sign({ id: user.id }, jwtSecret, (err, token) => {
         if (err) throw err;
         res.send({
           token,
