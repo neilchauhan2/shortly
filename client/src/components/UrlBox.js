@@ -65,7 +65,7 @@ class UrlBox extends Component {
                 <button
                   onClick={this.onClick}
                   className={"button is-info url-btn is-medium ".concat(
-                    isAuthenticated ? " is-active " : " is-static"
+                    /*isAuthenticated*/ true ? " is-active " : " is-static"
                   )}
                 >
                   Shorten
