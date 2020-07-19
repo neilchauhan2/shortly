@@ -1,5 +1,5 @@
 # Shortly
-### A url shortner made with the MERN Stack.
+### A url shortener made with the MERN Stack.
 
 
 ### Demo
@@ -7,8 +7,8 @@
 
 
 ### Tech Stack: 
-#### Node.js
-#### Express
-#### React
-#### Redux
-#### MongoDB
+- Node.js
+- Express
+- React
+- Redux
+- MongoDB
